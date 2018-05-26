@@ -1,5 +1,4 @@
-# APPLE CIDER 
-2016-02-15
+# Apple Cider
 ```
 1.Boil in huge pot
     12             -> cored apples
@@ -10,3 +9,4 @@
    for 01:00:00
 2.Simmer/cover/reduce for 02:00:00
 ```
+2016-02-15
