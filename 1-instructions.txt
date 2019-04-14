@@ -7,7 +7,7 @@ action
   ingredient
   intgredient
 
-instruction
+action
 
 Ingredient =
   amount | unit | food-or-component [modifier]
