@@ -11,3 +11,8 @@ action
 
 Ingredient =
   amount | unit | food-or-component [modifier]
+
+
+=============================
+
+Any .txt file will be added to the site via the build script.
