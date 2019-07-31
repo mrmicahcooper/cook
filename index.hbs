@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cook | Clank</title>
+  </head>
+    <style>
+      body * { 
+        font-size: 26px; 
+        text-decoration: none;
+        font-family: monospace;
+      }
+
+      body > a {
+        text-transform: capitalize;
+        border: solid 1px blue;
+        padding: 1em;
+        margin: 0.5em 5px;
+        display: inline-block;
+      }
+
+      header > a {
+        float: right;
+        padding-right: 20px
+      }
+    </style>
+    <header>
+      <a href="README.txt">README</a>
+      <h1>Cook | Clank</h1>
+    </header>
+
+    <body>
+      {{#each files}}
+        <a href="{{path}}">{{recipeName}}</a>
+      {{/each}}
+    </body>
+
+
+</html>

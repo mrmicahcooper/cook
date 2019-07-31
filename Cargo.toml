@@ -1,0 +1,11 @@
+[package]
+name = "recipes"
+version = "0.1.0"
+authors = ["Micah Cooper <micah+github@mrmicahcooper.com>"]
+
+[dependencies]
+handlebars = "2.0.1"
+serde_json = "1.0.40"
+serde = { version = "1.0.98", features = ["derive"] }
+glob = "0.3.0"
+regex = "1"
