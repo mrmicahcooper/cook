@@ -8,38 +8,33 @@ use glob::glob;
 use regex::Regex;
 use handlebars::Handlebars;
 use serde::{Serialize};
-use std::fs::File;
+use std::vec::{Vec};
+use std::fs::read_to_string as read_file;
+use std::fs::write as write_file;
 
-
-
-#[derive(Serialize, Debug)]
+#[derive(Serialize)]
 struct Recipe {
   path: String,
   name: String
 }
 
+#[derive(Serialize)]
+struct Data{
+  recipes: Vec<Recipe>
+}
+
 fn main() 
 {
-  let recipes:std::vec::Vec<Recipe> = recipes();
-  let mut handlebars = Handlebars::new();
-  let data = serde_json::to_string(&recipes).unwrap();
-  let index = index();
+  let recipes = Data { recipes: recipes()};
+  let hbs:String  = read_file("index.hbs").expect("couldn't read index.hbs");
+  let recipe_data = serde_json::to_value(&recipes).unwrap();
+  let index:String = Handlebars::new().render_template(&hbs, &recipe_data).unwrap();
 
-  println!(
-        "{}",
-        handlebars.render_template(&index, &recipes)
-    );
-
+  write_file("index.html", index).expect("could not write index.html");
+  println!("index.html has been written");
 }
 
-fn index()  -> String
-{
-  let index_file = File::open("index.hbs");
-  let mut buffer = String::new();
-  index_file.read_to_string(&mut buffer)
-}
-
-fn recipes() -> std::vec::Vec<Recipe> 
+fn recipes() -> Vec<Recipe>
 {
   let mut recipes = Vec::new();
   let regex = Regex::new(r"^([\w-]*)").unwrap();
