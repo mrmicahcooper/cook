@@ -3,40 +3,42 @@
   <head>
     <title>Cook | Clank</title>
   </head>
-    <style>
-      body * { 
-        font-size: 26px; 
-        text-decoration: none;
-        font-family: monospace;
-      }
 
-      p {
-        padding-top: 10px;
-      }
+  <style>
+    body * { 
+      font-size: 26px; 
+      text-decoration: none;
+      font-family: monospace;
+    }
 
-      body p a {
-        text-transform: capitalize;
-        border: solid 1px blue;
-        padding: 1em;
-        margin: 0.5em 12px;
-        display: inline-block;
-      }
+    p {
+      padding-top: 10px;
+    }
 
-      header > a {
-        float: right;
-        padding-right: 20px
-      }
-    </style>
-    <header>
-      <a href="https://github.com/mrmicahcooper/recipes">README.md</a>
-      <h1>Cook | Clank</h1>
-    </header>
+    body p a {
+      text-transform: capitalize;
+      border: solid 1px blue;
+      padding: 1em;
+      margin: 0.5em 12px;
+      display: inline-block;
+    }
 
-    <body>
-      <p>
-       {{#each recipes}}<a href="{{path}}">{{name}}</a>{{/each}}
-      </p>
-    </body>
+    header > a {
+      float: right;
+      padding-right: 20px
+    }
+  </style>
+
+  <header>
+    <a href="https://github.com/mrmicahcooper/recipes">README.md</a>
+    <h1>Cook | Clank</h1>
+  </header>
+
+  <body>
+    <p>
+      {{#each recipes}}<a href="{{path}}">{{name}}</a>{{/each}}
+    </p>
+  </body>
 
 
 </html>
