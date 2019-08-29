@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo "git pull --rebase origin master"
+git pull --rebase origin master
+
+echo "./recipes"
+./recipes
+
+echo "git add index.html"
+git add index.html
+
+echo "git commit -m 'Release $(date)'"
+git commit -m "Release $(date)"
+
+echo "git push origin master"
+git push origin master
