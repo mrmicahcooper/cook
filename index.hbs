@@ -10,7 +10,11 @@
         font-family: monospace;
       }
 
-      body > a {
+      p {
+        padding-top: 10px;
+      }
+
+      body p a {
         text-transform: capitalize;
         border: solid 1px blue;
         padding: 1em;
@@ -29,9 +33,9 @@
     </header>
 
     <body>
-      {{#each recipes}}
-        <a href="{{path}}">{{name}}</a>
-      {{/each}}
+      <p>
+       {{#each recipes}}<a href="{{path}}">{{name}}</a>{{/each}}
+      </p>
     </body>
 
 
