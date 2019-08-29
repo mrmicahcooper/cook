@@ -14,3 +14,6 @@ git commit -m "Release $(date)"
 
 echo "git push origin master"
 git push origin master
+
+echo "open https://cook.clank.us"
+open https://cook.clank.us
