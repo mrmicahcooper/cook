@@ -1,0 +1,43 @@
+! soy marinated steak stirfry
+
+#marinated_meat
+mix in a large bowl
+  3  | cloves  | garlic [chopped fine]
+  1  | each    | lime zest
+  1  | tbsp    | soy sauce
+  2  | tsp     | sugar
+  1  | drizzle | olive oil
+  1  | pinch   | salt
+  1  | pinch   | black pepper [ground]
+  14 | oz      | steak [cut into thin strips]
+
+#peanut_sauce_onions
+saute in high heat until tender
+  1 | clove   | garlic [chopped fine]
+  1 | bundle  | green onion whites
+  1 | drizzle | olive oil
+
+#peanut_sauce
+stir into a to #peanut_sauce_onions on low heat
+  2.3 | oz    | natural peanut butter
+  1/4 | cup   | water
+  2   | tsp   | sugar
+  1   | tsp   | soy sauce
+  1   | pinch | salt
+  1/4 | each  | lime juice
+
+#veggies
+stir on large baking sheet
+  3 | heads   | broccoli
+  1 | each    | red bell pepper [sliced to taste]
+  4 | each    | carrots [sliced into medallions]
+  1 | drizzle | olive oil
+  1 | pinch   | salt
+  1 | pinch   | black pepper
+
+bake #veggies @ 430 - 450 for 00:25:00
+
+saute #marinated_meat on high heat until done
+
+Add #marinated_meat, #veggies, and #peanut_sauce
+over rice
