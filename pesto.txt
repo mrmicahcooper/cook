@@ -10,7 +10,7 @@ pour in and pulse until combined
 
 #juices
 combine in a large bowl
-  #greens
+  1   | whole | #greens
   2/3 | cup   | pecorino romaono cheese [grated]
   4   | oz    | goat cheese [crumbled]
   1   | whole | lemon zest
