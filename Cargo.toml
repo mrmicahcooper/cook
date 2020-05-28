@@ -1,19 +1,6 @@
-[package]
-name = "cook"
-version = "0.1.0"
-authors = ["Micah Cooper <micah+github@mrmicahcooper.com>"]
+[workspace]
 
-[dependencies]
-handlebars = "2.0.1"
-serde_json = "1.0.40"
-serde = { version = "1.0.98", features = ["derive"] }
-glob = "0.3.0"
-regex = "1"
-
-[[bin]]
-name = "build-app"
-path = "src/app.rs"
-
-[[bin]]
-name = "parse"
-path = "src/parse.rs"
+members = [
+  "build-app",
+  "parse-cook"
+]
