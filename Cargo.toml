@@ -13,3 +13,7 @@ regex = "1"
 [[bin]]
 name = "build_app"
 path = "src/app.rs"
+
+[[bin]]
+name = "parse"
+path = "src/parse.rs"
