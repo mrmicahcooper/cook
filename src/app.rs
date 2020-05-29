@@ -37,13 +37,13 @@ fn main()
 fn recipes() -> Vec<Recipe>
 {
   let mut recipes = Vec::new();
-  let regex = Regex::new(r"^([\w-]*)").unwrap();
+  let regex = Regex::new(r"([\w-]*)\.txt").unwrap();
 
   for entry in glob("./recipes/*.txt").unwrap() {
     if let Ok(path) = entry {
 
       let filename:String = path.display().to_string();
-      let recipe_name:String = regex.captures(&filename).unwrap()[0].to_string();
+      let recipe_name:String = regex.captures(&filename).unwrap()[1].to_string();
 
       recipes.push(
         Recipe {
