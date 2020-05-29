@@ -1,5 +1,5 @@
 [package]
-name = "recipes"
+name = "cook"
 version = "0.1.0"
 authors = ["Micah Cooper <micah+github@mrmicahcooper.com>"]
 
@@ -9,3 +9,7 @@ serde_json = "1.0.40"
 serde = { version = "1.0.98", features = ["derive"] }
 glob = "0.3.0"
 regex = "1"
+
+[[bin]]
+name = "build_app"
+path = "src/app.rs"
