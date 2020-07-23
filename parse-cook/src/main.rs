@@ -1,8 +1,8 @@
 #![allow(dead_code)]
 
 use std::env;
+use std::process::exit;
 use std::fs::read_to_string as read_file;
-use regex::Regex;
 
 #[derive(Debug)]
 struct Recipe {
@@ -20,7 +20,7 @@ struct Part {
 enum Instruction {
   Action(String),
   Ingredient { 
-    amount: i8, 
+    amount: String,
     unit: String, 
     ingredient: String, 
     modifier: String 
@@ -38,41 +38,47 @@ enum State {
 
 fn main() {
   let args: Vec<String> = env::args().collect();
+
+  if args.len() < 2 {
+    println!("filename required");
+    exit(0);
+  }
+
   let file = read_file(&args[1]).unwrap();
-  let lines: Vec<&str> = file.split("\n").collect(); 
+  let lines = file.split("\n");
 
   let mut recipe = Recipe{ name: String::new(), parts: Vec::new() };
   let mut current_part = Part { label: String::new(), instructions: Vec::new() };
   let mut state: State = State::Empty;
 
-  for line_number in 0..=lines.len() -2 {
-    let line: String = lines[line_number].to_string();
+  for line in lines {
+    let text = line.to_string();
 
-    if line == "" { continue; }
+    match (&state, &text.get(0..1)) {
 
-    let first_character = &line[0..1];
+      (State::Empty, None) => { }
 
-    match (&state, line_number, first_character) {
-      (State::Empty, 0, _) => {
+      (State::Empty, Some("!")) => {
         state = State::Title;
-        recipe.name = line;
+        recipe.name = text;
       }
 
-      (State::Title, _, "#") => {
+      (State::Title, Some("#")) => {
         state = State::Part;
-        current_part.label = line;
+        current_part.label = text;
       }
 
-      (State::Part, _, " ") => {
-        state = State::Action;
-        let action = Instruction::Action(line);
-        current_part.instructions.push(action);
+      (State::Part, None) => {
+        recipe.parts.push(current_part);
+        current_part = Part { label: String::new(), instructions: Vec::new() };
       }
 
-      (State::Part, _, _) => {
-        state = State::Action;
-        let ingredient = ingredient(line)
-        let action = Instruction::Ingredient();
+      (State::Part, Some(" ")) => {
+        current_part.instructions.push(ingredient(&text.to_string()));
+      }
+
+      (State::Part, _) => {
+        let action = Instruction::Action(text);
         current_part.instructions.push(action);
       }
 
@@ -84,9 +90,12 @@ fn main() {
   println!("{:?}", recipe);
 }
 
-fn ingredient(line: String) -> Instruction::Ingredient {
-  let regex = Regex::new(r"(.+)\[(.+)\]").unwrap();
-  let [amount, unit, ingredient_base] = line.split("|");
-  let [ingredient, modifier] = regex.captures(&ingredient_base)?
-
+fn ingredient(text: &String) -> Instruction {
+  let items: Vec<&str> = text.split("|").collect();
+  Instruction::Ingredient {
+    amount: items[0].trim().to_string(),
+    unit: items[1].trim().to_string(),
+    ingredient: items[2].trim().to_string(),
+    modifier: String::from("modifier")
+  }
 }
