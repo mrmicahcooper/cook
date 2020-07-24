@@ -1,22 +1,30 @@
 #![allow(dead_code)]
 
+extern crate serde_json;
+extern crate serde;
+extern crate lazy_static;
+
+use serde::{Serialize};
+
 use std::env;
 use std::process::exit;
 use std::fs::read_to_string as read_file;
+use regex::Regex;
+use lazy_static::lazy_static;
 
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 struct Recipe {
   name: String,
   parts: Vec<Part>
 }
 
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 struct Part {
   label: String,
   instructions: Vec<Instruction>
 }
 
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 enum Instruction {
   Action(String),
   Ingredient { 
@@ -34,6 +42,10 @@ enum State {
   Part,
   Action,
   Ingredient
+}
+
+lazy_static! {
+  static ref INGREDIENT_REGEX: Regex = Regex::new(r"([^\[^\]]+)\[?([^\[^\].]*)\]?").unwrap();
 }
 
 fn main() {
@@ -60,12 +72,12 @@ fn main() {
 
       (State::Empty, Some("!")) => {
         state = State::Title;
-        recipe.name = text;
+        recipe.name = title(&text);
       }
 
-      (State::Title, Some("#")) => {
+      (_, Some("#")) => {
         state = State::Part;
-        current_part.label = text;
+        current_part.label = title(&text);
       }
 
       (State::Part, None) => {
@@ -87,15 +99,28 @@ fn main() {
 
   }
 
-  println!("{:?}", recipe);
+  println!("{}", serde_json::to_string(&recipe).unwrap());
+}
+
+fn title(text: &String) -> String {
+  text.get(1..).unwrap().trim().to_string()
+}
+
+fn ingredient_and_modifier(ingredient: &str) -> (String, String) {
+  let captures = INGREDIENT_REGEX.captures(&ingredient).unwrap();
+  (
+    captures[1].trim().to_string(),
+    captures[2].trim().to_string()
+  )
 }
 
 fn ingredient(text: &String) -> Instruction {
   let items: Vec<&str> = text.split("|").collect();
+  let (ingredient, modifier) = ingredient_and_modifier(items[2]);
   Instruction::Ingredient {
     amount: items[0].trim().to_string(),
     unit: items[1].trim().to_string(),
-    ingredient: items[2].trim().to_string(),
-    modifier: String::from("modifier")
+    ingredient: ingredient,
+    modifier: modifier
   }
 }
