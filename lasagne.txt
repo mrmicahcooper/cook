@@ -1,0 +1,48 @@
+! lasagne
+
+#tomato-sauce
+add to large pot
+  3/4   | lbs    | lean ground beef [cooked]
+  3/4   | lbs    | italian sausage [cooked]
+  1     |        | large onion [chopped]
+  3     | cloves | garlic [chopped]
+  1     | tsp    | black pepper
+  1 1/2 | tsp    | salt
+  1     | palm   | oregano
+  1     | palm   | parsley
+  1     | palm   | basil
+  2     | cans   | whole diced tomatoes [14.5 oz]
+  2     | cans   | tomato paste [6 oz]
+
+bring #tomato-sauce to a boil
+
+cover and simmer #sauce for 01:00:00
+
+#cheese-sauce
+mix in medium bowl
+  24  | oz   | ricotta cheese
+  2   |      | eggs
+  1/2 | tsp  | black pepper
+  1   | palm | parsley
+  1/2 | lbs  | mozzerrella [shredded]
+  1/2 | cup  | parmesean cheese
+
+#noodles
+Boil to aldente
+  12-15 |      | noodles
+
+layer in a baking pan
+  #noodles
+  #tomato-sauce
+  #cheese-sauce
+
+add final layer of #noodles
+
+add to the top layer
+  1/2 | lbs | mozerrella cheese
+
+cover with foil and bake @ 375 for 00:40:00
+
+uncover and bake @ 365 for 00:20:00
+
+sit for 00:18:00

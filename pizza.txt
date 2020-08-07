@@ -1,0 +1,47 @@
+! pizza
+
+#yeast
+mix in small glass dish
+  1/2   | cup | water [110 deg F]
+  2 1/4 | tsp | instant yeast
+  1/4   | tsp | sugar
+
+let #yeast sit for 00:05:00
+
+#dough
+mix in mixing bowl
+  2     | cup  | bread flour
+  2     | cup  | all purpose flour
+  1 1/2 | tsp  | salt
+  1 1/4 | cup  | water [72 deg. F]
+  2     | tbsp | olive oil
+  all   | all  | #yeast
+
+mix #dough in mixer until it's all together
+kneed #dough in mixer for 00:05:00
+lightly flour #dough into a ball
+add to oiled bowl
+bake #dough @ < 100 for 01:00:00 - 02:00:00
+
+#sauce
+saute in a sauce pan until translucent
+  1   | cm     | olive oil
+  1/2 | bundle | garlic
+
+add to sauce pan
+  3 | 14.5 oz cans | Hunts tomato sauce
+  1 | big palm     | dried basil
+  1 | med palm     | dried thyme
+  1 | sm palm      | italian seasoning
+  1 | sm pinch     | dried oregano
+
+simmer #sauce for 00:25:00
+
+#pie
+spread #dough on canola oil lined pizza pan
+spread on pan
+  1   | ladel | #sauce
+  3/4 | lbs   | cheese
+  all | all   | toppings
+
+bake #pie at 495 for 00:11:00 1 at a time

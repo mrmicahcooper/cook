@@ -1,0 +1,28 @@
+! 3 cheese macaroni
+
+#cheese
+mix in a large bowl
+  1 | lbs | mild cheddar [cheedar]
+  4 | oz | romano cheese [shredded]
+  4 | oz | asiago cheese [shredded]
+
+#noodles
+boil in a large pot to aldente
+  1 | lbs | macaroni noodles
+
+#sauce
+brown in large pot
+  6 | tbsp | flour
+  6 | tbsp | butter
+
+cook into #sauce until thick
+  3 | cups | milk [cold]
+
+#macroni
+add to #sauce and cook until melted
+  1/2 | tbsp | kosher salt
+  1   | tbsp | black pepper
+  1   | cup  | heavy cream
+      |      | #cheese
+
+bake in 9x13 pan #macaroni at 325 for 00:20:00

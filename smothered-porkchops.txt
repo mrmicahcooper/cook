@@ -1,0 +1,27 @@
+! smothered porkchops
+
+#flour
+add to flat dish
+  1 | cup | flour
+
+#eggs
+add in flat dish
+  2 | each | eggs
+
+#chops
+dip in #flour then #eggs then #flour
+  6 | each | porkchops
+
+deep fry #chops
+
+#gravy
+brown in a large skillet
+  1   | each | bell pepper [chopped]
+  1/2 | each | onion [large, chopped]
+  3   | tbsp | flour
+
+add to the #gravy
+ 3 | cups | water
+ 1 | pack | brown gravy
+
+simmer #chops in #gravy for 00:20:00

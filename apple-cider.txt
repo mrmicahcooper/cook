@@ -1,0 +1,15 @@
+! apple cider
+
+# cider
+fill in a large pot
+  3/4 | cup    | sugar
+  12  | each   | cored apples
+  1   | tbsp   | cinnamon
+  1   | tbsp   | all spice
+  2   | inches | water [above apples]
+
+boil for 01:00:00
+
+cover and simmer for 02:00:00
+
+strain #cider through cheese cloth

@@ -1,0 +1,13 @@
+[package]
+name = "parse-cook"
+version = "0.1.0"
+authors = ["Micah Cooper <micah+github@mrmicahcooper.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+regex="1"
+lazy_static = "1.4.0"
+serde_json = "1.0.40"
+serde = { version = "1.0.98", features = ["derive"] }

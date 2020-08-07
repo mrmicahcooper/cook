@@ -1,0 +1,22 @@
+! ramen noodles
+
+#water
+stir in small bowl until dissolved
+  45  | g | soft water
+  1.1 | g | potassium carbonate
+  0.3 | g | sodium carbonate
+  1.5 | g | salt
+
+#dough
+mix in mixer until all flour is absorbed
+  70 | g | high-protein bread flour
+  20 | g | wheat flour
+  10 | g | rye flour
+  #water
+
+pour #dough into ziplock bag
+compress #dough until flat and stuck together
+flatten #dough in pasta roller down to #5 or #6
+cut #dough with spaghetti cutter
+
+cook in boiling water for 00:01:00 - 00:02:00
