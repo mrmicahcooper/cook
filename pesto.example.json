@@ -5,80 +5,95 @@
       "label": "greens",
       "instructions": [
         {
-          "type": "action",
-          "content": "pulse in food processor until roughly chopped"
+          "action": "pulse in food processor until roughly chopped"
         },
         { 
-          "type": "ingredient",
-          "content": {
-            "amount":"1",
+          "ingredient": {
+            "amount": "1",
             "unit":"clove",
-            "ingredient":"garlic",
+            "item":"garlic",
             "modifier":"rough chopped"
           }
         },
-        {
-          "type": "action",
-          "content": "pour in and pulse until combined"
+        { 
+          "ingredient": {
+            "amount": "2/3",
+            "unit":"cup",
+            "item":"walnut",
+            "modifier":"toasted"
+          }
         },
         { 
-          "type":"ingredient",
-          "content": {
+          "ingredient": {
+            "amount": "2",
+            "unit":"cup",
+            "item":"fresh basil",
+            "modifier":"loosley packed"
+          }
+        },
+        {
+          "action": "pour in and pulse until combined"
+        },
+        { 
+          "ingredient": {
             "amount":"2/3",
             "unit":"cup",
-            "ingredient":"garlic",
+            "item":"garlic",
             "modifier":"rough chopped"
           }
         }
       ]
     },
     {
+      "label": null,
+      "instructions": [
+        {
+          "action":  "bake in 9x13 pan #macaroni @ 325 for 00:20:00"
+        }
+
+      ]
+    },
+    {
       "label": "juices",
       "instructions": [
         {
-          "type": "action",
-          "content": "combine in a large bowl"
+          "action": "combine in a large bowl"
         },
         { 
-          "type": "ingredient",
-          "content": {
+          "ingredient": {
             "amount":"1",
             "unit":"whold",
-            "ingredient":"greens"
+            "item":"greens"
           }
         },
         { 
-          "type": "ingredient",
-          "content": {
+          "ingredient": {
             "amount":"2/3",
             "unit":"cup",
-            "ingredient":"pecorino romano cheese",
+            "item":"pecorino romano cheese",
             "modifier":"crumbled"
           }
         },
         { 
-          "type": "ingredient",
-          "content": {
+          "ingredient": {
             "amount":"4",
             "unit":"oz",
-            "ingredient":"goat cheese",
+            "item":"goat cheese",
             "modifier":"crumbled"
           }
         },
         { 
-          "type": "ingredient",
-          "content": {
+          "ingredient": {
             "amount":"1",
             "unit":"whole",
-            "ingredient":"lemon zest"
+            "item":"lemon zest"
           }
         },
         { 
-          "type": "ingredient",
-          "content": {
+          "ingredient": {
             "amount":"1",
             "unit":"whole",
-            "ingredient":"lemon juice"
+            "item":"lemon juice"
           }
         }
       ]

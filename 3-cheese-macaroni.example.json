@@ -1,0 +1,31 @@
+{
+  "title": "3 cheese macaroni",
+  "parts": [
+    {
+      "label": "cheese",
+      "actions": [{
+        "content":"mix in a large bowl",
+        "ingredients?": [
+          {
+            "amount": 1,
+            "unit": "lbs",
+            "item": "mild cheddar",
+            "modifier": "shredded"
+          },
+          {
+            "amount": 4,
+            "unit": "oz",
+            "item": "romano cheese",
+            "modifier": "shredded"
+          },
+          {
+            "amount": 4,
+            "unit": "oz",
+            "item": "asiago cheese",
+            "modifier": "shredded" 
+          }
+        ]
+      }]
+    }
+  ]
+}
