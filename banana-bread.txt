@@ -22,9 +22,7 @@ mix into #wet-base until flour pockets remain
 do no over mix
   1   | all | #dry-base
 fold in
-  100 | g | walnuts  
-
-
+  100 | g | walnuts
 
 add #batter to greased 9x5 loaf pan
 bake loosly covered with foil @ 350F for 00:30:00
