@@ -39,7 +39,7 @@ fn recipes() -> Vec<Recipe>
   let mut recipes = Vec::new();
   let regex = Regex::new(r"([\w-]*)\.txt").unwrap();
 
-  for entry in glob("./recipes/*.txt").unwrap() {
+  for entry in glob("./*.txt").unwrap() {
     if let Ok(path) = entry {
 
       let filename:String = path.display().to_string();
