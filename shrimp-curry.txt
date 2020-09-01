@@ -3,16 +3,15 @@
 #veggies
 saute until soft
   1   | each | medium onion [thin sliced long-ways]
-  1   | each | jalapeno [choppe fine, no seeds/ribs]
-  3/4 | tsp  | sale [course]
-
+  1   | each | jalapeno [chopped fine, no seeds/ribs]
+  3/4 | tsp  | salt [course]
 
 stir into #veggies until smooth and fragrant
   2   | tbsp | tomato paste
   2   | tsp  | madrad curry
   1/4 | tsp  | ground ginger
 stir in  until cooked down
-  4 | each | plum tomatoes [quartered, chunked]
+  4 | each | roma tomatoes [quartered, chunked]
 pour in 
  1 1/2 | cup | water
 
