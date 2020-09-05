@@ -2,3 +2,5 @@ code/target
 **/*.rs.bk
 code/index.html
 index.html
+/* **/*.elixir_ls */
+code/cook_ex/.elixir_ls/
