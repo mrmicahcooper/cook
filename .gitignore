@@ -4,3 +4,12 @@ code/index.html
 index.html
 /* **/*.elixir_ls */
 code/cook_ex/.elixir_ls/
+
+code/cook_ex/_build/
+code/cook_ex/cover/
+code/cook_ex/deps/
+code/cook_ex/doc/
+code/cook_ex/.fetch
+code/cook_exerl_crash.dump
+code/cook_ex*.ez
+code/cook_excook_ex-*.tar
