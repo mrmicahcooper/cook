@@ -1,4 +1,4 @@
-defmodule Parser.Helpers do
+defmodule Decoder.Helpers do
   import NimbleParsec
 
   def title do
@@ -16,7 +16,6 @@ defmodule Parser.Helpers do
     |> concat(instruction())
     |> wrap()
   end
-
 
   def action do
     utf8_char([{:not, ?\s}, {:not, ?\n}])

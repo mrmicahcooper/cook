@@ -6,11 +6,11 @@ defmodule ParserTest do
   test "decode!/1" do
     data = "test/fixtures/pesto.txt"
            |> File.read!()
-           |> Parser.decode!()
+           |> Decoder.decode!()
 
     assert data.title == "pesto sauce"
     assert Enum.count(data.parts) == 2
-    assert data |> get_in([:parts, at(0), :instructions, at(0), :content]) == "pulse"
+    assert data |> get_in([:parts, at(0), :instructions, at(0), :content]) == "pulse in food processor until roughly chopped"
 
   end
 end

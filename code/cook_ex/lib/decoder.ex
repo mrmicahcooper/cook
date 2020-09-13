@@ -1,19 +1,14 @@
-defmodule Parser do
+defmodule Decoder do
   import NimbleParsec
-  import Parser.Helpers
+  import Decoder.Helpers
 
   defparsec :tokenize, recipe()
 
   def decode!(string) do
-    acc = %{
-      title: nil,
-      parts: []
-    }
-
     string
     |> tokenize()
     |> elem(1)
-    |> Enum.reduce(acc, &to_map/2)
+    |> Enum.reduce(%{}, &to_map/2)
   end
 
   def to_map({:title, title}, acc) do
@@ -21,7 +16,7 @@ defmodule Parser do
   end
 
   def to_map({:parts, parts}, acc) do
-    Map.put(acc, :parts, Enum.map(parts, &part/1))
+    put_in(acc, [Access.key(:parts, [])], Enum.map(parts, &part/1))
   end
 
   def part(part) do
