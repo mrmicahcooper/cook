@@ -1,84 +1,53 @@
 defmodule Parser do
   import NimbleParsec
+  import Parser.Helpers
 
-  title =
-    ignore(string("!"))
-    |> label("recipe to start with a \"!\"")
-    |> ignore(repeat(string(" ")))
-    |> repeat(utf8_char([{:not, ?\n}]))
-    |> tag(:title)
+  defparsec :tokenize, recipe()
 
-  action =
-    utf8_char([{:not, ?\s}, {:not, ?\n}])
-    |> repeat(utf8_char([{:not, ?\n}, {:not, ?\r}]))
-    |> ignore(string("\n"))
-    |> tag(:action)
+  def decode!(string) do
+    acc = %{
+      title: nil,
+      parts: []
+    }
 
-  amount =
-    utf8_char([?0..?9,?/,?.,?\s])
-    |> repeat()
-    |> ignore(string("|"))
-    |> tag(:amount)
+    string
+    |> tokenize()
+    |> elem(1)
+    |> Enum.reduce(acc, &to_map/2)
+  end
 
-  unit =
-    utf8_char([{:not, ?|}])
-    |> repeat()
-    |> ignore(string("|"))
-    |> tag(:unit)
+  def to_map({:title, title}, acc) do
+    Map.put(acc, :title, to_string(title))
+  end
 
-  item =
-    utf8_char([{:not, ?\n}, {:not, ?[}])
-    |> repeat()
-    |> tag(:item)
+  def to_map({:parts, parts}, acc) do
+    Map.put(acc, :parts, Enum.map(parts, &part/1))
+  end
 
-  modifier =
-    ignore(string("["))
-    |> repeat(utf8_char([{:not, ?]}]))
-    |> ignore(string("]"))
-    |> tag(:modifier)
+  def part(part) do
+    Enum.reduce(part, %{}, &part/2)
+  end
 
-  ingredient =
-    ignore(utf8_string([?\s], min: 1))
-    |> concat(amount)
-    |> concat(unit)
-    |> concat(item)
-    |> concat(optional(modifier))
-    |> ignore(utf8_char([?\n]))
-    |> tag(:ingredient)
+  def part({:label, label}, acc) do
+    Map.put(acc, :label, to_string(label))
+  end
 
-  label =
-    string("#")
-    |> ignore(repeat(string(" ")))
-    |> repeat(utf8_char([{:not, ?\n}, {:not, ?\r}]))
-    |> ignore(utf8_char([?\n]))
-    |> tag(:label)
+  def part({:instructions, instructions}, acc) do
+    Map.put(acc, :instructions, Enum.map(instructions, &instruction/1))
+  end
 
-  instruction =
-    [action, ingredient]
-    |> choice()
-    |> repeat()
-    |> tag(:instructions)
+  def instruction([{:action, value}]) do
+    %{
+      type: :action,
+      content: to_string(value)
+    }
+  end
 
-  part =
-    ignore(utf8_string([?\n], min: 1))
-    |> optional(label)
-    |> concat(instruction)
-    |> tag(:part)
-
-  recipe =
-    title
-    |> concat(
-      repeat(part)
-    )
-
-  def not_double_line_break("\n\n"<>_binary, context, _, _), do: {:halt, context}
-  def not_double_line_break("\r\r"<>_binary, context, _, _), do: {:halt, context}
-  def not_double_line_break(_, context, _, _), do: {:cont, context}
-
-  def not_line_break("\n"<>_binary, context, _, _), do: {:halt, context}
-  def not_line_break("\r"<>_binary, context, _, _), do: {:halt, context}
-  def not_line_break(_, context, _, _), do: {:cont, context}
-
-  defparsec :decode, recipe
-
+  def instruction([{:ingredient, ingredient}]) do
+    %{type: :ingredient,
+      content: Enum.into(ingredient, %{}, fn({key,value}) ->
+        { key, to_string(value) |> String.trim() }
+      end)
+    }
+  end
 end
